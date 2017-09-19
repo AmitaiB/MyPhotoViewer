@@ -1,0 +1,518 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0548FC832B30FD54225F7DA8CAD7728B /* Pods-MyPhotoViewerTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2024530C2D8780FCD6B45109922468 /* Pods-MyPhotoViewerTests-dummy.m */; };
+		502A1D853EEE15EF1872F06A151E16E7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		5DA7EBFFA52722DC82C7B98BA6E15EE7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		8C30711B5439E23FD85BFB9BD6A09722 /* Pods-MyPhotoViewer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E0C6D332522A8F5377965AAC778FEB64 /* Pods-MyPhotoViewer-dummy.m */; };
+		B438E88D95248A37ECFA6F072FAAA3E0 /* Pods-MyPhotoViewerTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AB1EE97355722183FC6592A735469300 /* Pods-MyPhotoViewerTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F1136D9BA5F17C8146917FE4AB313135 /* Pods-MyPhotoViewer-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 66534302AC924FA22352B6D9257DDD53 /* Pods-MyPhotoViewer-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1898C95BA9C6F1E5B60BDEFCC0A8236A /* Pods_MyPhotoViewerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MyPhotoViewerTests.framework; path = "Pods-MyPhotoViewerTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C44E0CDB8D149E171E4A789158E6813 /* Pods-MyPhotoViewer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MyPhotoViewer.release.xcconfig"; sourceTree = "<group>"; };
+		2DAB10F09A86EB0D1F755591AD295C9B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A889291071AEFB72517856C9C033E80 /* Pods-MyPhotoViewer-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MyPhotoViewer-acknowledgements.markdown"; sourceTree = "<group>"; };
+		4AFFA18240CA5FE2ECB88410BA33BC9A /* Pods_MyPhotoViewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MyPhotoViewer.framework; path = "Pods-MyPhotoViewer.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C201F86B096C6EE4F9170D90E2E8429 /* Pods-MyPhotoViewerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MyPhotoViewerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		66534302AC924FA22352B6D9257DDD53 /* Pods-MyPhotoViewer-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MyPhotoViewer-umbrella.h"; sourceTree = "<group>"; };
+		6B837F4F46153079A82E44200693295B /* Pods-MyPhotoViewerTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MyPhotoViewerTests-resources.sh"; sourceTree = "<group>"; };
+		78EF86B78381DD9BE7C91D6363D616EF /* Pods-MyPhotoViewer.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-MyPhotoViewer.modulemap"; sourceTree = "<group>"; };
+		80D51607A60596D1B20C2FEDBF2F8F67 /* Pods-MyPhotoViewerTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MyPhotoViewerTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		91EFFF82A33C24686B2ADA74F5FE0460 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9387EEB3EC0BA2BFC32048CFA50D036F /* Pods-MyPhotoViewer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MyPhotoViewer.debug.xcconfig"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		99FBD132517B3326EC3993BCF5BF3807 /* Pods-MyPhotoViewer-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MyPhotoViewer-acknowledgements.plist"; sourceTree = "<group>"; };
+		9EFCADDD9909A97D79F23B129511387D /* Pods-MyPhotoViewerTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-MyPhotoViewerTests.modulemap"; sourceTree = "<group>"; };
+		A57B9AC36B9CCA027DE84A85DE149EE5 /* Pods-MyPhotoViewer-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MyPhotoViewer-frameworks.sh"; sourceTree = "<group>"; };
+		AB1EE97355722183FC6592A735469300 /* Pods-MyPhotoViewerTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MyPhotoViewerTests-umbrella.h"; sourceTree = "<group>"; };
+		B6F5E78777592722F38E4B6DB0B8A245 /* Pods-MyPhotoViewer-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MyPhotoViewer-resources.sh"; sourceTree = "<group>"; };
+		DA41915B83720A835649BB3A64D046F2 /* Pods-MyPhotoViewerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MyPhotoViewerTests.release.xcconfig"; sourceTree = "<group>"; };
+		DF2024530C2D8780FCD6B45109922468 /* Pods-MyPhotoViewerTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MyPhotoViewerTests-dummy.m"; sourceTree = "<group>"; };
+		E0C6D332522A8F5377965AAC778FEB64 /* Pods-MyPhotoViewer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MyPhotoViewer-dummy.m"; sourceTree = "<group>"; };
+		E904758B272F812EDACA0B0605750616 /* Pods-MyPhotoViewerTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MyPhotoViewerTests-frameworks.sh"; sourceTree = "<group>"; };
+		F592099FE49142FCC66FCD56761A4275 /* Pods-MyPhotoViewerTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MyPhotoViewerTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		14D33C1ABCD04EEB8642F60D3F268D89 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5DA7EBFFA52722DC82C7B98BA6E15EE7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3375593FB6B141FC0E865DA1F01807A3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				502A1D853EEE15EF1872F06A151E16E7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0E74E8CBB922E9FA3CE247FEA1FAE796 /* Pods-MyPhotoViewerTests */ = {
+			isa = PBXGroup;
+			children = (
+				2DAB10F09A86EB0D1F755591AD295C9B /* Info.plist */,
+				9EFCADDD9909A97D79F23B129511387D /* Pods-MyPhotoViewerTests.modulemap */,
+				F592099FE49142FCC66FCD56761A4275 /* Pods-MyPhotoViewerTests-acknowledgements.markdown */,
+				80D51607A60596D1B20C2FEDBF2F8F67 /* Pods-MyPhotoViewerTests-acknowledgements.plist */,
+				DF2024530C2D8780FCD6B45109922468 /* Pods-MyPhotoViewerTests-dummy.m */,
+				E904758B272F812EDACA0B0605750616 /* Pods-MyPhotoViewerTests-frameworks.sh */,
+				6B837F4F46153079A82E44200693295B /* Pods-MyPhotoViewerTests-resources.sh */,
+				AB1EE97355722183FC6592A735469300 /* Pods-MyPhotoViewerTests-umbrella.h */,
+				4C201F86B096C6EE4F9170D90E2E8429 /* Pods-MyPhotoViewerTests.debug.xcconfig */,
+				DA41915B83720A835649BB3A64D046F2 /* Pods-MyPhotoViewerTests.release.xcconfig */,
+			);
+			name = "Pods-MyPhotoViewerTests";
+			path = "Target Support Files/Pods-MyPhotoViewerTests";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				96E7DEA261DE2DEA8800A34B7C97B59D /* Products */,
+				DCBB94D6C26140EA73B539CB702DC14A /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		96E7DEA261DE2DEA8800A34B7C97B59D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4AFFA18240CA5FE2ECB88410BA33BC9A /* Pods_MyPhotoViewer.framework */,
+				1898C95BA9C6F1E5B60BDEFCC0A8236A /* Pods_MyPhotoViewerTests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B7C45356408344DED1A209793D82BDAC /* Pods-MyPhotoViewer */ = {
+			isa = PBXGroup;
+			children = (
+				91EFFF82A33C24686B2ADA74F5FE0460 /* Info.plist */,
+				78EF86B78381DD9BE7C91D6363D616EF /* Pods-MyPhotoViewer.modulemap */,
+				4A889291071AEFB72517856C9C033E80 /* Pods-MyPhotoViewer-acknowledgements.markdown */,
+				99FBD132517B3326EC3993BCF5BF3807 /* Pods-MyPhotoViewer-acknowledgements.plist */,
+				E0C6D332522A8F5377965AAC778FEB64 /* Pods-MyPhotoViewer-dummy.m */,
+				A57B9AC36B9CCA027DE84A85DE149EE5 /* Pods-MyPhotoViewer-frameworks.sh */,
+				B6F5E78777592722F38E4B6DB0B8A245 /* Pods-MyPhotoViewer-resources.sh */,
+				66534302AC924FA22352B6D9257DDD53 /* Pods-MyPhotoViewer-umbrella.h */,
+				9387EEB3EC0BA2BFC32048CFA50D036F /* Pods-MyPhotoViewer.debug.xcconfig */,
+				2C44E0CDB8D149E171E4A789158E6813 /* Pods-MyPhotoViewer.release.xcconfig */,
+			);
+			name = "Pods-MyPhotoViewer";
+			path = "Target Support Files/Pods-MyPhotoViewer";
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		DCBB94D6C26140EA73B539CB702DC14A /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				B7C45356408344DED1A209793D82BDAC /* Pods-MyPhotoViewer */,
+				0E74E8CBB922E9FA3CE247FEA1FAE796 /* Pods-MyPhotoViewerTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		6E792D0D8EEA520C14F2920E619C2938 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1136D9BA5F17C8146917FE4AB313135 /* Pods-MyPhotoViewer-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C51FE70A7D58E79DF1212BA034502D19 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B438E88D95248A37ECFA6F072FAAA3E0 /* Pods-MyPhotoViewerTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		73DE737E89400483E6DDE0B3DA502B6F /* Pods-MyPhotoViewer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 829C394BBC8CF1422BF9A1319BB56491 /* Build configuration list for PBXNativeTarget "Pods-MyPhotoViewer" */;
+			buildPhases = (
+				CF28749F840B67CB80AE954B02FA541D /* Sources */,
+				14D33C1ABCD04EEB8642F60D3F268D89 /* Frameworks */,
+				6E792D0D8EEA520C14F2920E619C2938 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-MyPhotoViewer";
+			productName = "Pods-MyPhotoViewer";
+			productReference = 4AFFA18240CA5FE2ECB88410BA33BC9A /* Pods_MyPhotoViewer.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		9E00D35AA9B0C56321E85B47AED9BFEA /* Pods-MyPhotoViewerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4A461ECE04FECFCC400FDB1B8AA4E107 /* Build configuration list for PBXNativeTarget "Pods-MyPhotoViewerTests" */;
+			buildPhases = (
+				1C36A7EEE8AD3D63A921D2B4B3D8435D /* Sources */,
+				3375593FB6B141FC0E865DA1F01807A3 /* Frameworks */,
+				C51FE70A7D58E79DF1212BA034502D19 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-MyPhotoViewerTests";
+			productName = "Pods-MyPhotoViewerTests";
+			productReference = 1898C95BA9C6F1E5B60BDEFCC0A8236A /* Pods_MyPhotoViewerTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 96E7DEA261DE2DEA8800A34B7C97B59D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				73DE737E89400483E6DDE0B3DA502B6F /* Pods-MyPhotoViewer */,
+				9E00D35AA9B0C56321E85B47AED9BFEA /* Pods-MyPhotoViewerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1C36A7EEE8AD3D63A921D2B4B3D8435D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0548FC832B30FD54225F7DA8CAD7728B /* Pods-MyPhotoViewerTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF28749F840B67CB80AE954B02FA541D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C30711B5439E23FD85BFB9BD6A09722 /* Pods-MyPhotoViewer-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		06BE9236DDB0FDECA892FEC4E2069C0B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4C201F86B096C6EE4F9170D90E2E8429 /* Pods-MyPhotoViewerTests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-MyPhotoViewerTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-MyPhotoViewerTests/Pods-MyPhotoViewerTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_MyPhotoViewerTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		1A41B15D3AA834993ADDD808FA9D8764 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1C0C978A30C322F8027F3A827CE1054E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C44E0CDB8D149E171E4A789158E6813 /* Pods-MyPhotoViewer.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-MyPhotoViewer/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-MyPhotoViewer/Pods-MyPhotoViewer.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_MyPhotoViewer;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		230D1ED5B3835BAE9F3B4E4046D519BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9387EEB3EC0BA2BFC32048CFA50D036F /* Pods-MyPhotoViewer.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-MyPhotoViewer/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-MyPhotoViewer/Pods-MyPhotoViewer.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_MyPhotoViewer;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		6F73FA4927BEF44A720D2B9C711BC5B4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DA41915B83720A835649BB3A64D046F2 /* Pods-MyPhotoViewerTests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-MyPhotoViewerTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-MyPhotoViewerTests/Pods-MyPhotoViewerTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_MyPhotoViewerTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		BC80BBB5C066539FFFC0B2127CA5D3C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC80BBB5C066539FFFC0B2127CA5D3C4 /* Debug */,
+				1A41B15D3AA834993ADDD808FA9D8764 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4A461ECE04FECFCC400FDB1B8AA4E107 /* Build configuration list for PBXNativeTarget "Pods-MyPhotoViewerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				06BE9236DDB0FDECA892FEC4E2069C0B /* Debug */,
+				6F73FA4927BEF44A720D2B9C711BC5B4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		829C394BBC8CF1422BF9A1319BB56491 /* Build configuration list for PBXNativeTarget "Pods-MyPhotoViewer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				230D1ED5B3835BAE9F3B4E4046D519BB /* Debug */,
+				1C0C978A30C322F8027F3A827CE1054E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
