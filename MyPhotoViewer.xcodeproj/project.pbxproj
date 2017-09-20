@@ -20,6 +20,7 @@
 		383A8F9A1F70EBB700216B24 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 383A8F981F70EBB700216B24 /* LaunchScreen.storyboard */; };
 		383A8FA51F70EBB700216B24 /* MyPhotoViewerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383A8FA41F70EBB700216B24 /* MyPhotoViewerTests.swift */; };
 		383CAAD11F72BD8500927FAE /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383CAAD01F72BD8500927FAE /* Errors.swift */; };
+		383CAAD31F72C28E00927FAE /* Optional+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383CAAD21F72C28E00927FAE /* Optional+Extensions.swift */; };
 		9BEBDB181C734B377E3BEF8D /* Pods_MyPhotoViewerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 062E60BCB68ADB988E63B4B7 /* Pods_MyPhotoViewerTests.framework */; };
 		FB7DE7CFC61C2CA6BC08A9D6 /* Pods_MyPhotoViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E25D1398769947FD28241EFD /* Pods_MyPhotoViewer.framework */; };
 /* End PBXBuildFile section */
@@ -53,6 +54,7 @@
 		383A8FA41F70EBB700216B24 /* MyPhotoViewerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPhotoViewerTests.swift; sourceTree = "<group>"; };
 		383A8FA61F70EBB700216B24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		383CAAD01F72BD8500927FAE /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		383CAAD21F72C28E00927FAE /* Optional+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Extensions.swift"; sourceTree = "<group>"; };
 		536D2837F1954C25D2A511A1 /* Pods-MyPhotoViewer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPhotoViewer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyPhotoViewer/Pods-MyPhotoViewer.debug.xcconfig"; sourceTree = "<group>"; };
 		AF4DDDC2F9D5AC00D741E3F7 /* Pods-MyPhotoViewerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPhotoViewerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyPhotoViewerTests/Pods-MyPhotoViewerTests.release.xcconfig"; sourceTree = "<group>"; };
 		DF80766634E60274555D7252 /* Pods-MyPhotoViewerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPhotoViewerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyPhotoViewerTests/Pods-MyPhotoViewerTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				383CAAD01F72BD8500927FAE /* Errors.swift */,
+				383CAAD21F72C28E00927FAE /* Optional+Extensions.swift */,
 			);
 			path = Supporting;
 			sourceTree = "<group>";
@@ -401,7 +404,9 @@
 				380B2FCD1F72194600046631 /* PhotoViewerNavController.swift in Sources */,
 				380B2FD11F7221FF00046631 /* String+L10n.swift in Sources */,
 				383A8F901F70EBB700216B24 /* AppDelegate.swift in Sources */,
+				383CAAD31F72C28E00927FAE /* Optional+Extensions.swift in Sources */,
 				380B2FD01F721DC200046631 /* PhotoCollectionViewController.swift in Sources */,
+				383CAAD11F72BD8500927FAE /* Errors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
