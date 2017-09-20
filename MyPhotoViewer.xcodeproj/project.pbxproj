@@ -8,7 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		380B2FC01F71E62200046631 /* localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 380B2FBF1F71E62200046631 /* localizable.strings */; };
+		380B2FC41F71E64D00046631 /* ColorsList.txt in Resources */ = {isa = PBXBuildFile; fileRef = 380B2FC31F71E64D00046631 /* ColorsList.txt */; };
 		380B2FC71F7214C200046631 /* String+L10n.swift in Resources */ = {isa = PBXBuildFile; fileRef = 380B2FC61F7214C200046631 /* String+L10n.swift */; };
+		380B2FCB1F72166900046631 /* MyColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380B2FCA1F72166900046631 /* MyColors.swift */; };
 		383A8F901F70EBB700216B24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383A8F8F1F70EBB700216B24 /* AppDelegate.swift */; };
 		383A8F921F70EBB700216B24 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383A8F911F70EBB700216B24 /* ViewController.swift */; };
 		383A8F951F70EBB700216B24 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 383A8F931F70EBB700216B24 /* Main.storyboard */; };
@@ -32,7 +34,9 @@
 /* Begin PBXFileReference section */
 		062E60BCB68ADB988E63B4B7 /* Pods_MyPhotoViewerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyPhotoViewerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		380B2FBF1F71E62200046631 /* localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = localizable.strings; sourceTree = "<group>"; };
+		380B2FC31F71E64D00046631 /* ColorsList.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = ColorsList.txt; sourceTree = "<group>"; };
 		380B2FC61F7214C200046631 /* String+L10n.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+L10n.swift"; sourceTree = "<group>"; };
+		380B2FCA1F72166900046631 /* MyColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyColors.swift; sourceTree = "<group>"; };
 		383A8F8C1F70EBB700216B24 /* MyPhotoViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyPhotoViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		383A8F8F1F70EBB700216B24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		383A8F911F70EBB700216B24 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -86,6 +90,8 @@
 			children = (
 				380B2FBF1F71E62200046631 /* localizable.strings */,
 				380B2FC61F7214C200046631 /* String+L10n.swift */,
+				380B2FC31F71E64D00046631 /* ColorsList.txt */,
+				380B2FCA1F72166900046631 /* MyColors.swift */,
 			);
 			path = "SwiftGen resources";
 			sourceTree = "<group>";
@@ -232,6 +238,7 @@
 			files = (
 				383A8F9A1F70EBB700216B24 /* LaunchScreen.storyboard in Resources */,
 				380B2FC71F7214C200046631 /* String+L10n.swift in Resources */,
+				380B2FC41F71E64D00046631 /* ColorsList.txt in Resources */,
 				380B2FC01F71E62200046631 /* localizable.strings in Resources */,
 				383A8F971F70EBB700216B24 /* Assets.xcassets in Resources */,
 				383A8F951F70EBB700216B24 /* Main.storyboard in Resources */,
@@ -260,7 +267,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "swiftgen strings -t structured-swift4  \"$SRCROOT/MyPhotoViewer/SwiftGen resources/localizable.strings\" -o \"$SRCROOT/MyPhotoViewer/SwiftGen resources/String+L10n.swift\"";
+			shellScript = "swiftgen strings -t structured-swift4  \"$SRCROOT/MyPhotoViewer/SwiftGen resources/localizable.strings\" -o \"$SRCROOT/MyPhotoViewer/SwiftGen resources/String+L10n.swift\"\n\nswiftgen colors -t swift4 \"$SRCROOT/MyPhotoViewer/SwiftGen resources/ColorsList.txt\" -o \"$SRCROOT/MyPhotoViewer/Swiftgen resources/MyColors.swift\"";
 		};
 		3B4D96CC5695D5B7A0B46E8A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -366,6 +373,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				383A8F921F70EBB700216B24 /* ViewController.swift in Sources */,
+				380B2FCB1F72166900046631 /* MyColors.swift in Sources */,
 				383A8F901F70EBB700216B24 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
