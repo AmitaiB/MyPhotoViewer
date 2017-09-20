@@ -4,12 +4,14 @@ import Foundation
 
 // swiftlint:disable file_length
 
-// swiftlint:disable explicit_type_interface identifier_name line_length nesting type_body_length type_name
+// swiftlint:disable identifier_name line_length type_body_length
 enum L10n {
   /// PhotoCellReuseID
   static let photoCellReuseID = L10n.tr("localizable", "PhotoCellReuseID")
+  /// http://jsonplaceholder.typicode.com/photos
+  static let httpJsonplaceholderTypicodeComPhotos = L10n.tr("localizable", "http://jsonplaceholder.typicode.com/photos")
 }
-// swiftlint:enable explicit_type_interface identifier_name line_length nesting type_body_length type_name
+// swiftlint:enable identifier_name line_length type_body_length
 
 extension L10n {
   private static func tr(_ table: String, _ key: String, _ args: CVarArg...) -> String {

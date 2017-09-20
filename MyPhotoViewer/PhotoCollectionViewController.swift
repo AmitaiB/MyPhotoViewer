@@ -11,7 +11,10 @@ import UIKit
 private let reuseIdentifier = L10n.photoCellReuseID
 
 class PhotoCollectionViewController: UICollectionViewController {
-
+	var photos = [PhotoData]()
+	var images = [UIImage]()
+	
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,6 +31,34 @@ class PhotoCollectionViewController: UICollectionViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+	
+	func refresh() throws {
+		
+		let handler = { (location: URL?, response: URLResponse?, error: Error?) in
+			do {
+				if let error = error { throw NetworkError.responseFailed(reason: "Received error: ↴\n\(error.localizedDescription)") }
+				guard let location = location else { throw NetworkError.responseFailed(reason: "Can't find response data.") }
+			
+				let data = try Data(contentsOf: location)
+				let photoData = try JSONDecoder().decode(PhotoData.self, from: data)
+				
+				self.photos.append(photoData)
+				DispatchQueue.main.async {
+					self.collectionView?.reloadData()
+				}
+			}
+			catch {
+				print(error.localizedDescription)
+			}
+		}
+		
+		let session = URLSession.shared
+		let photoBankURL = URL(fileURLWithPath: L10n.httpJsonplaceholderTypicodeComPhotos)
+		let photosRequest = URLRequest(url: photoBankURL)
+		let task = session.downloadTask(with: photosRequest, completionHandler: handler)
+		
+		task.resume()
+	}
 
     /*
     // MARK: - Navigation
