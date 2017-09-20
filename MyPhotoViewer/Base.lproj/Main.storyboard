@@ -41,13 +41,27 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCellReuseID" id="AOR-BJ-k8F">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCellReuseID" id="AOR-BJ-k8F" customClass="PhotoCell" customModule="MyPhotoViewer" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="106" height="106"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                     <rect key="frame" x="0.0" y="0.0" width="106" height="106"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zBd-02-5vb">
+                                            <rect key="frame" x="0.0" y="0.0" width="106" height="106"/>
+                                        </imageView>
+                                    </subviews>
                                 </view>
+                                <constraints>
+                                    <constraint firstItem="zBd-02-5vb" firstAttribute="top" secondItem="AOR-BJ-k8F" secondAttribute="top" id="o6B-lE-nAg"/>
+                                    <constraint firstItem="zBd-02-5vb" firstAttribute="leading" secondItem="AOR-BJ-k8F" secondAttribute="leading" id="oCd-ii-egT"/>
+                                    <constraint firstAttribute="trailing" secondItem="zBd-02-5vb" secondAttribute="trailing" id="q2M-Fu-PeZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="zBd-02-5vb" secondAttribute="bottom" id="xQJ-W4-9Xh"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="imageView" destination="zBd-02-5vb" id="2wM-rx-5Fe"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -59,7 +73,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5xH-ht-mq0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="630" y="118"/>
+            <point key="canvasLocation" x="629.60000000000002" y="117.39130434782609"/>
         </scene>
     </scenes>
 </document>

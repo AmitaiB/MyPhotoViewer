@@ -21,6 +21,7 @@
 		383A8FA51F70EBB700216B24 /* MyPhotoViewerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383A8FA41F70EBB700216B24 /* MyPhotoViewerTests.swift */; };
 		383CAAD11F72BD8500927FAE /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383CAAD01F72BD8500927FAE /* Errors.swift */; };
 		383CAAD31F72C28E00927FAE /* Optional+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383CAAD21F72C28E00927FAE /* Optional+Extensions.swift */; };
+		383CAAD81F72CA4E00927FAE /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383CAAD71F72CA4E00927FAE /* PhotoCell.swift */; };
 		9BEBDB181C734B377E3BEF8D /* Pods_MyPhotoViewerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 062E60BCB68ADB988E63B4B7 /* Pods_MyPhotoViewerTests.framework */; };
 		FB7DE7CFC61C2CA6BC08A9D6 /* Pods_MyPhotoViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E25D1398769947FD28241EFD /* Pods_MyPhotoViewer.framework */; };
 /* End PBXBuildFile section */
@@ -55,6 +56,7 @@
 		383A8FA61F70EBB700216B24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		383CAAD01F72BD8500927FAE /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		383CAAD21F72C28E00927FAE /* Optional+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Extensions.swift"; sourceTree = "<group>"; };
+		383CAAD71F72CA4E00927FAE /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		536D2837F1954C25D2A511A1 /* Pods-MyPhotoViewer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPhotoViewer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyPhotoViewer/Pods-MyPhotoViewer.debug.xcconfig"; sourceTree = "<group>"; };
 		AF4DDDC2F9D5AC00D741E3F7 /* Pods-MyPhotoViewerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPhotoViewerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyPhotoViewerTests/Pods-MyPhotoViewerTests.release.xcconfig"; sourceTree = "<group>"; };
 		DF80766634E60274555D7252 /* Pods-MyPhotoViewerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPhotoViewerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyPhotoViewerTests/Pods-MyPhotoViewerTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -134,8 +136,7 @@
 				380B2FBE1F71E60D00046631 /* SwiftGen resources */,
 				383A8F931F70EBB700216B24 /* Main.storyboard */,
 				383CAACF1F72B8BE00927FAE /* Model(s) */,
-				380B2FCC1F72194600046631 /* PhotoViewerNavController.swift */,
-				380B2FCF1F721DC100046631 /* PhotoCollectionViewController.swift */,
+				383CAAD51F72C9FB00927FAE /* Controllers */,
 				383CAAD41F72C29400927FAE /* Supporting */,
 			);
 			path = MyPhotoViewer;
@@ -165,6 +166,17 @@
 				383CAAD21F72C28E00927FAE /* Optional+Extensions.swift */,
 			);
 			path = Supporting;
+			sourceTree = "<group>";
+		};
+		383CAAD51F72C9FB00927FAE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				380B2FCC1F72194600046631 /* PhotoViewerNavController.swift */,
+				380B2FCF1F721DC100046631 /* PhotoCollectionViewController.swift */,
+				383CAAD71F72CA4E00927FAE /* PhotoCell.swift */,
+				383CAAD91F72CC8300927FAE /* PhotoController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		C5B29DE02ABE0D0D3355B2A6 /* Frameworks */ = {
@@ -400,6 +412,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				380B2FD31F722C9800046631 /* Photo.swift in Sources */,
+				383CAAD81F72CA4E00927FAE /* PhotoCell.swift in Sources */,
 				380B2FCB1F72166900046631 /* MyColors.swift in Sources */,
 				380B2FCD1F72194600046631 /* PhotoViewerNavController.swift in Sources */,
 				380B2FD11F7221FF00046631 /* String+L10n.swift in Sources */,
