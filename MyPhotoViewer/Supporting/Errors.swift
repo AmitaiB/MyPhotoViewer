@@ -12,3 +12,7 @@ enum NetworkError: Error {
 	case responseFailed(reason: String)
 }
 
+enum LocalError: Error {
+	case cacheFailed
+}
+

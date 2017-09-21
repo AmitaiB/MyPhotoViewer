@@ -14,5 +14,13 @@ struct PhotoData: Decodable {
 	let title: String
 	let url: URL
 	let thumbnailUrl: URL
+	
+	var cacheKey: String {
+		return "albumId: \(albumId); id: \(id)"
+	}
+	
+	var thumbnailCacheKey: String {
+		return "\(cacheKey) - thumbnail"
+	}
 }
 
