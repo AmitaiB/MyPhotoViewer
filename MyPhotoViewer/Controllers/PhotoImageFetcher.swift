@@ -1,5 +1,5 @@
 //
-//  PhotoController.swift
+// PhotoController.swift
 //  MyPhotoViewer
 //
 //  Created by Amitai Blickstein on 9/20/17.
@@ -12,7 +12,8 @@ import Cache
 enum PhotoSize: String { case full, thumbnail }
 typealias ImageHandler = (UIImage) -> ()
 
-class PhotoController {
+
+class PhotoImageFetcher {
 	static let cache = PhotoCache.getInstance()
 	
 	static func image(forPhoto photoData: PhotoData, size: PhotoSize = .full, completion: @escaping ImageHandler) throws
@@ -54,7 +55,7 @@ class PhotoController {
 				
 				let imageCacheKey = imageKey(of: photoData, in: size)
 				let imageData = try Data(contentsOf: location)
-				if let image =  UIImage(data: imageData) {
+				if let image = UIImage(data: imageData) {
 					let wrapper = ImageWrapper(image: image)
 					try cache?.setObject(wrapper, forKey: imageCacheKey)
 					
@@ -80,5 +81,8 @@ class PhotoController {
 		return size == .full ? photoData.cacheKey : photoData.thumbnailCacheKey
 	}
 	
+	private static func imageURL(of photoData: PhotoData, in size: PhotoSize) -> URL {
+		return size == .full ? photoData.url : photoData.thumbnailUrl
+	}
 }
 
