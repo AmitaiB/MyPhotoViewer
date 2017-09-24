@@ -8,6 +8,8 @@ import Foundation
 enum L10n {
   /// PhotoCellReuseID
   static let photoCellReuseID = L10n.tr("localizable", "PhotoCellReuseID")
+  /// PhotoDetailViewController
+  static let photoDetailViewController = L10n.tr("localizable", "PhotoDetailViewController")
   /// http://jsonplaceholder.typicode.com/photos
   static let httpJsonplaceholderTypicodeComPhotos = L10n.tr("localizable", "http://jsonplaceholder.typicode.com/photos")
 }

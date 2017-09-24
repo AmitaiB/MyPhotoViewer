@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13178.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Xjo-Wz-ROz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Xjo-Wz-ROz">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13156.2"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -53,6 +54,7 @@
                                         </imageView>
                                     </subviews>
                                 </view>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="zBd-02-5vb" firstAttribute="top" secondItem="AOR-BJ-k8F" secondAttribute="top" id="o6B-lE-nAg"/>
                                     <constraint firstItem="zBd-02-5vb" firstAttribute="leading" secondItem="AOR-BJ-k8F" secondAttribute="leading" id="oCd-ii-egT"/>
@@ -61,6 +63,7 @@
                                 </constraints>
                                 <connections>
                                     <outlet property="imageView" destination="zBd-02-5vb" id="2wM-rx-5Fe"/>
+                                    <segue destination="4eo-4I-Bhp" kind="presentation" id="t1R-iB-FeV"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -72,8 +75,29 @@
                     <navigationItem key="navigationItem" id="dD3-d4-BPW"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5xH-ht-mq0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="yg7-UQ-Akz">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <viewLayoutGuide key="safeArea" id="arh-aA-LoH"/>
+                </view>
             </objects>
             <point key="canvasLocation" x="629.60000000000002" y="117.39130434782609"/>
+        </scene>
+        <!--Photo Detail View Controller-->
+        <scene sceneID="HfJ-oj-znH">
+            <objects>
+                <viewController storyboardIdentifier="PhotoDetailViewController" id="4eo-4I-Bhp" customClass="PhotoDetailViewController" customModule="MyPhotoViewer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="r5N-sh-Yr7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="R0O-y3-OuZ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Do-FU-rsy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1359" y="117"/>
         </scene>
     </scenes>
 </document>

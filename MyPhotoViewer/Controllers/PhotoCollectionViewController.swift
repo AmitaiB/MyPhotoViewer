@@ -56,6 +56,8 @@ class PhotoCollectionViewController: UICollectionViewController {
 	}
 	
 
+	// MARK: UICollectionViewDataSource
+	
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return photos.count
     }
@@ -83,10 +85,16 @@ class PhotoCollectionViewController: UICollectionViewController {
 	}
 	
 	fileprivate func presentDetailView(for photo: PhotoData) {
-		let detailViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: L10n.photoDetailViewController)
-		detailViewController.photo = photo
-		
-		present(detailViewController, animated: true, completion: nil)
-
+		if let detailViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PhotoDetailViewController") as? PhotoDetailViewController {
+			detailViewController.photo = photo
+			
+			present(detailViewController, animated: true, completion: nil)
+		}
 	}
 }
+
+// MARK: cleanliness code
+fileprivate extension Selector {
+	static let refresh = #selector(PhotoCollectionViewController.refresh)
+}
+

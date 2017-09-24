@@ -8,3 +8,4 @@
 
 "PhotoCellReuseID" = "PhotoCellReuseID";
 "http://jsonplaceholder.typicode.com/photos" = "http://jsonplaceholder.typicode.com/photos";
+"PhotoDetailViewController" = "PhotoDetailViewController";
