@@ -28,16 +28,14 @@ class PhotoCollectionViewController: UICollectionViewController {
 		task.resume()
 	}
 	
-	private func createPhotoDownloadTask() -> URLSessionDownloadTask {
-		let handler = { (location: URL?, response: URLResponse?, error: Error?) in
+	private func createPhotoDataTask() -> URLSessionTask {
+		let handler = { (data: Data?, response: URLResponse?, error: Error?) in
 			do {
 				if let error = error { throw NetworkError.responseFailed(reason: "Received error: ↴\n\(error.localizedDescription)") }
-				guard let location = location else { throw NetworkError.responseFailed(reason: "Can't find response data.") }
-			
-				let data = try Data(contentsOf: location)
-				let photoData = try JSONDecoder().decode(PhotoData.self, from: data)
+				guard let data = data else { throw NetworkError.responseFailed(reason: "Can't find response data.") }
 				
-				self.photos.append(photoData)
+				let photosData = try JSONDecoder().decode([PhotoData].self, from: data)
+				self.photos.append(contentsOf: photosData)
 				DispatchQueue.main.async {
 					self.collectionView?.reloadData()
 				}
@@ -50,12 +48,13 @@ class PhotoCollectionViewController: UICollectionViewController {
 		let session = URLSession.shared
 		guard let photoBankURL = URL(string: L10n.httpJsonplaceholderTypicodeComPhotos) else { fatalError("Flawed HTTPS address given.") }
 		let photosRequest = URLRequest(url: photoBankURL)
-		let task = session.downloadTask(with: photosRequest, completionHandler: handler)
+		let task = session.dataTask(with: photosRequest, completionHandler: handler)
 		
 		return task
 	}
 	
 
+	
 	// MARK: UICollectionViewDataSource
 	
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
