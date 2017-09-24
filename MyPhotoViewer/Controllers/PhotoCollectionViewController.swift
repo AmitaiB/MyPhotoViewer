@@ -48,7 +48,7 @@ class PhotoCollectionViewController: UICollectionViewController {
 		}
 		
 		let session = URLSession.shared
-		let photoBankURL = URL(fileURLWithPath: L10n.httpJsonplaceholderTypicodeComPhotos)
+		guard let photoBankURL = URL(string: L10n.httpJsonplaceholderTypicodeComPhotos) else { fatalError("Flawed HTTPS address given.") }
 		let photosRequest = URLRequest(url: photoBankURL)
 		let task = session.downloadTask(with: photosRequest, completionHandler: handler)
 		
