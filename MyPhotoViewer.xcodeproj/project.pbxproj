@@ -25,6 +25,7 @@
 		383CAADA1F72CC8300927FAE /* PhotoImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383CAAD91F72CC8300927FAE /* PhotoImageFetcher.swift */; };
 		383CAAE01F72E4D800927FAE /* PhotoCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383CAADF1F72E4D800927FAE /* PhotoCache.swift */; };
 		38D363F51F77011800E91B6E /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D363F41F77011800E91B6E /* PhotoDetailViewController.swift */; };
+		38D364201F78B1F500E91B6E /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D3641F1F78B1F500E91B6E /* Assets.swift */; };
 		9BEBDB181C734B377E3BEF8D /* Pods_MyPhotoViewerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 062E60BCB68ADB988E63B4B7 /* Pods_MyPhotoViewerTests.framework */; };
 		FB7DE7CFC61C2CA6BC08A9D6 /* Pods_MyPhotoViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E25D1398769947FD28241EFD /* Pods_MyPhotoViewer.framework */; };
 /* End PBXBuildFile section */
@@ -63,6 +64,7 @@
 		383CAAD91F72CC8300927FAE /* PhotoImageFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoImageFetcher.swift; sourceTree = "<group>"; };
 		383CAADF1F72E4D800927FAE /* PhotoCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCache.swift; sourceTree = "<group>"; };
 		38D363F41F77011800E91B6E /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
+		38D3641F1F78B1F500E91B6E /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		536D2837F1954C25D2A511A1 /* Pods-MyPhotoViewer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPhotoViewer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyPhotoViewer/Pods-MyPhotoViewer.debug.xcconfig"; sourceTree = "<group>"; };
 		AF4DDDC2F9D5AC00D741E3F7 /* Pods-MyPhotoViewerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPhotoViewerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyPhotoViewerTests/Pods-MyPhotoViewerTests.release.xcconfig"; sourceTree = "<group>"; };
 		DF80766634E60274555D7252 /* Pods-MyPhotoViewerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPhotoViewerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyPhotoViewerTests/Pods-MyPhotoViewerTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 		380B2FBE1F71E60D00046631 /* SwiftGen resources */ = {
 			isa = PBXGroup;
 			children = (
+				38D3641F1F78B1F500E91B6E /* Assets.swift */,
 				380B2FBF1F71E62200046631 /* localizable.strings */,
 				380B2FC61F7214C200046631 /* String+L10n.swift */,
 				380B2FC31F71E64D00046631 /* ColorsList.txt */,
@@ -136,9 +139,9 @@
 			isa = PBXGroup;
 			children = (
 				383A8F8F1F70EBB700216B24 /* AppDelegate.swift */,
-				383A8F961F70EBB700216B24 /* Assets.xcassets */,
 				383A8F981F70EBB700216B24 /* LaunchScreen.storyboard */,
 				383A8F9B1F70EBB700216B24 /* Info.plist */,
+				383A8F961F70EBB700216B24 /* Assets.xcassets */,
 				380B2FBE1F71E60D00046631 /* SwiftGen resources */,
 				383A8F931F70EBB700216B24 /* Main.storyboard */,
 				383CAACF1F72B8BE00927FAE /* Model(s) */,
@@ -322,7 +325,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "swiftgen strings -t flat-swift4  \"$SRCROOT/MyPhotoViewer/SwiftGen resources/localizable.strings\" -o \"$SRCROOT/MyPhotoViewer/SwiftGen resources/String+L10n.swift\"\n\nswiftgen colors -t swift4 \"$SRCROOT/MyPhotoViewer/SwiftGen resources/ColorsList.txt\" -o \"$SRCROOT/MyPhotoViewer/Swiftgen resources/MyColors.swift\"";
+			shellScript = "swiftgen strings -t flat-swift4  \"$SRCROOT/MyPhotoViewer/SwiftGen resources/localizable.strings\" -o \"$SRCROOT/MyPhotoViewer/SwiftGen resources/String+L10n.swift\"\n\nswiftgen colors -t swift4 \"$SRCROOT/MyPhotoViewer/SwiftGen resources/ColorsList.txt\" -o \"$SRCROOT/MyPhotoViewer/Swiftgen resources/MyColors.swift\"\n\nswiftgen xcassets -t swift4  \"$SRCROOT/MyPhotoViewer/Assets.xcassets\" -o \"$SRCROOT/MyPhotoViewer/SwiftGen resources/Assets.swift\"\n";
 		};
 		3B4D96CC5695D5B7A0B46E8A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -440,6 +443,7 @@
 				380B2FD11F7221FF00046631 /* String+L10n.swift in Sources */,
 				38D363F51F77011800E91B6E /* PhotoDetailViewController.swift in Sources */,
 				383A8F901F70EBB700216B24 /* AppDelegate.swift in Sources */,
+				38D364201F78B1F500E91B6E /* Assets.swift in Sources */,
 				383CAAD31F72C28E00927FAE /* Optional+Extensions.swift in Sources */,
 				383CAAE01F72E4D800927FAE /* PhotoCache.swift in Sources */,
 				380B2FD01F721DC200046631 /* PhotoCollectionViewController.swift in Sources */,
