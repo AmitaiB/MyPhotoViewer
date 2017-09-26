@@ -10,9 +10,15 @@ import UIKit
 
 class PhotoCell: UICollectionViewCell {
 	@IBOutlet weak var imageView: UIImageView!
-	var photo: PhotoData?
+	var photo: PhotoData? {
+		didSet {
+			setPhoto(photo)
+		}
+	}
 	
-	func setPhoto(_ photo: PhotoData) {
+	func setPhoto(_ photo: PhotoData?) {
+		guard let photo = photo else { return }
+		
 		do {
 			try PhotoImageFetcher.image(forPhoto: photo, size: .thumbnail) { self.imageView.image = $0 }
 		} catch {
@@ -20,8 +26,8 @@ class PhotoCell: UICollectionViewCell {
 		}
 	}
 
-	override func layoutSubviews() {
-		super.layoutSubviews()
-		imageView.frame = contentView.bounds
+	override func prepareForReuse() {
+		photo = nil
+		imageView.image = Asset.placeholderIcon.image
 	}
 }

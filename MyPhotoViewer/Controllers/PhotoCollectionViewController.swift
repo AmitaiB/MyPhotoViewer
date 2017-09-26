@@ -13,6 +13,10 @@ private let reuseIdentifier = L10n.photoCellReuseID
 class PhotoCollectionViewController: UICollectionViewController {
 	var photos = [PhotoData]()
 	var images = [UIImage]()
+	var detailViewController: PhotoDetailViewController? {
+		return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PhotoDetailViewController") as? PhotoDetailViewController
+	}
+	
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,8 +27,8 @@ class PhotoCollectionViewController: UICollectionViewController {
 		catch { print(error.localizedDescription) }
     }
 	
-	func refresh() throws {
-		let task = createPhotoDownloadTask()
+	@objc func refresh() throws {
+		let task = createPhotoDataTask()
 		task.resume()
 	}
 	
@@ -35,7 +39,7 @@ class PhotoCollectionViewController: UICollectionViewController {
 				guard let data = data else { throw NetworkError.responseFailed(reason: "Can't find response data.") }
 				
 				let photosData = try JSONDecoder().decode([PhotoData].self, from: data)
-				self.photos.append(contentsOf: photosData)
+				self.photos = photosData
 				DispatchQueue.main.async {
 					self.collectionView?.reloadData()
 				}
@@ -63,13 +67,11 @@ class PhotoCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+		guard let photoCell = cell as? PhotoCell else {
+			return cell }
 		
-		if let photoCell = cell as? PhotoCell {
-			photoCell.photo = photos[indexPath.row]
-			return photoCell
-		}
-    
-        return cell
+		photoCell.photo = photos[indexPath.row]
+		return photoCell
     }
 
     // MARK: UICollectionViewDelegate
@@ -84,16 +86,12 @@ class PhotoCollectionViewController: UICollectionViewController {
 	}
 	
 	fileprivate func presentDetailView(for photo: PhotoData) {
-		if let detailViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PhotoDetailViewController") as? PhotoDetailViewController {
-			detailViewController.photo = photo
+		if let detailVC = detailViewController {
+			detailVC.photo = photo
 			
-			present(detailViewController, animated: true, completion: nil)
+			present(detailVC, animated: true, completion: nil)
 		}
 	}
 }
 
-// MARK: cleanliness code
-fileprivate extension Selector {
-	static let refresh = #selector(PhotoCollectionViewController.refresh)
-}
 
