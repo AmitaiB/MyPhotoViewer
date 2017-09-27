@@ -20,8 +20,6 @@ class PhotoCollectionViewController: UICollectionViewController {
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 		
 		do { try refresh() }
 		catch { print(error.localizedDescription) }
@@ -74,8 +72,9 @@ class PhotoCollectionViewController: UICollectionViewController {
 		return photoCell
     }
 
-    // MARK: UICollectionViewDelegate
-
+	
+	 // MARK: UICollectionViewDelegate
+	
     override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
         return true
     }
@@ -87,6 +86,9 @@ class PhotoCollectionViewController: UICollectionViewController {
 	
 	fileprivate func presentDetailView(for photo: PhotoData) {
 		if let detailVC = detailViewController {
+
+			detailVC.modalPresentationStyle = .custom
+			detailVC.transitioningDelegate = self
 			detailVC.photo = photo
 			
 			present(detailVC, animated: true, completion: nil)
@@ -94,4 +96,17 @@ class PhotoCollectionViewController: UICollectionViewController {
 	}
 }
 
+
+// MARK: - UIViewControllerTransitioningDelegate
+
+
+extension PhotoCollectionViewController: UIViewControllerTransitioningDelegate {
+	func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+		return PresentDetailTransition()
+	}
+	
+	func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+		return DismissDetailTransition()
+	}
+}
 

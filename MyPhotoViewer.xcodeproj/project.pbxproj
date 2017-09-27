@@ -25,6 +25,8 @@
 		383CAADA1F72CC8300927FAE /* PhotoImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383CAAD91F72CC8300927FAE /* PhotoImageFetcher.swift */; };
 		383CAAE01F72E4D800927FAE /* PhotoCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383CAADF1F72E4D800927FAE /* PhotoCache.swift */; };
 		38D363F51F77011800E91B6E /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D363F41F77011800E91B6E /* PhotoDetailViewController.swift */; };
+		38D3641A1F77733200E91B6E /* PresentDetailTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D364191F77733200E91B6E /* PresentDetailTransition.swift */; };
+		38D3641C1F7774C700E91B6E /* DismissDetailTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D3641B1F7774C700E91B6E /* DismissDetailTransition.swift */; };
 		38D364201F78B1F500E91B6E /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D3641F1F78B1F500E91B6E /* Assets.swift */; };
 		9BEBDB181C734B377E3BEF8D /* Pods_MyPhotoViewerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 062E60BCB68ADB988E63B4B7 /* Pods_MyPhotoViewerTests.framework */; };
 		FB7DE7CFC61C2CA6BC08A9D6 /* Pods_MyPhotoViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E25D1398769947FD28241EFD /* Pods_MyPhotoViewer.framework */; };
@@ -64,6 +66,8 @@
 		383CAAD91F72CC8300927FAE /* PhotoImageFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoImageFetcher.swift; sourceTree = "<group>"; };
 		383CAADF1F72E4D800927FAE /* PhotoCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCache.swift; sourceTree = "<group>"; };
 		38D363F41F77011800E91B6E /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
+		38D364191F77733200E91B6E /* PresentDetailTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentDetailTransition.swift; sourceTree = "<group>"; };
+		38D3641B1F7774C700E91B6E /* DismissDetailTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissDetailTransition.swift; sourceTree = "<group>"; };
 		38D3641F1F78B1F500E91B6E /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		536D2837F1954C25D2A511A1 /* Pods-MyPhotoViewer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPhotoViewer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyPhotoViewer/Pods-MyPhotoViewer.debug.xcconfig"; sourceTree = "<group>"; };
 		AF4DDDC2F9D5AC00D741E3F7 /* Pods-MyPhotoViewerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPhotoViewerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyPhotoViewerTests/Pods-MyPhotoViewerTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -202,6 +206,8 @@
 		38D364181F77731800E91B6E /* Custom Transition */ = {
 			isa = PBXGroup;
 			children = (
+				38D364191F77733200E91B6E /* PresentDetailTransition.swift */,
+				38D3641B1F7774C700E91B6E /* DismissDetailTransition.swift */,
 			);
 			path = "Custom Transition";
 			sourceTree = "<group>";
@@ -447,6 +453,7 @@
 				380B2FD31F722C9800046631 /* Photo.swift in Sources */,
 				383CAAD81F72CA4E00927FAE /* PhotoCell.swift in Sources */,
 				380B2FCB1F72166900046631 /* MyColors.swift in Sources */,
+				38D3641C1F7774C700E91B6E /* DismissDetailTransition.swift in Sources */,
 				380B2FCD1F72194600046631 /* PhotoViewerNavController.swift in Sources */,
 				380B2FD11F7221FF00046631 /* String+L10n.swift in Sources */,
 				38D363F51F77011800E91B6E /* PhotoDetailViewController.swift in Sources */,
@@ -455,6 +462,7 @@
 				383CAAD31F72C28E00927FAE /* Optional+Extensions.swift in Sources */,
 				383CAAE01F72E4D800927FAE /* PhotoCache.swift in Sources */,
 				380B2FD01F721DC200046631 /* PhotoCollectionViewController.swift in Sources */,
+				38D3641A1F77733200E91B6E /* PresentDetailTransition.swift in Sources */,
 				383CAAD11F72BD8500927FAE /* Errors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -545,7 +553,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -596,7 +604,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
