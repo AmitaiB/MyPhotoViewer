@@ -172,6 +172,7 @@
 		383CAAD41F72C29400927FAE /* Supporting */ = {
 			isa = PBXGroup;
 			children = (
+				38D364181F77731800E91B6E /* Custom Transition */,
 				383CAADF1F72E4D800927FAE /* PhotoCache.swift */,
 				383CAAD01F72BD8500927FAE /* Errors.swift */,
 				383CAAD21F72C28E00927FAE /* Optional+Extensions.swift */,
@@ -196,6 +197,13 @@
 				383CAAD71F72CA4E00927FAE /* PhotoCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		38D364181F77731800E91B6E /* Custom Transition */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Custom Transition";
 			sourceTree = "<group>";
 		};
 		C5B29DE02ABE0D0D3355B2A6 /* Frameworks */ = {
