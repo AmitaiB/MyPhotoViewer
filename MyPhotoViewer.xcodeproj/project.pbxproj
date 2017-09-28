@@ -24,6 +24,8 @@
 		383CAAD81F72CA4E00927FAE /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383CAAD71F72CA4E00927FAE /* PhotoCell.swift */; };
 		383CAADA1F72CC8300927FAE /* PhotoImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383CAAD91F72CC8300927FAE /* PhotoImageFetcher.swift */; };
 		383CAAE01F72E4D800927FAE /* PhotoCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383CAADF1F72E4D800927FAE /* PhotoCache.swift */; };
+		3898B52A1F7C5BB500273064 /* MyStoryboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3898B5291F7C5BB500273064 /* MyStoryboards.swift */; };
+		3898B52C1F7C8DA500273064 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3898B52B1F7C8DA500273064 /* Array+Extensions.swift */; };
 		38D363F51F77011800E91B6E /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D363F41F77011800E91B6E /* PhotoDetailViewController.swift */; };
 		38D3641A1F77733200E91B6E /* PresentDetailTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D364191F77733200E91B6E /* PresentDetailTransition.swift */; };
 		38D3641C1F7774C700E91B6E /* DismissDetailTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D3641B1F7774C700E91B6E /* DismissDetailTransition.swift */; };
@@ -65,6 +67,8 @@
 		383CAAD71F72CA4E00927FAE /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		383CAAD91F72CC8300927FAE /* PhotoImageFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoImageFetcher.swift; sourceTree = "<group>"; };
 		383CAADF1F72E4D800927FAE /* PhotoCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCache.swift; sourceTree = "<group>"; };
+		3898B5291F7C5BB500273064 /* MyStoryboards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyStoryboards.swift; sourceTree = "<group>"; };
+		3898B52B1F7C8DA500273064 /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 		38D363F41F77011800E91B6E /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
 		38D364191F77733200E91B6E /* PresentDetailTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentDetailTransition.swift; sourceTree = "<group>"; };
 		38D3641B1F7774C700E91B6E /* DismissDetailTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissDetailTransition.swift; sourceTree = "<group>"; };
@@ -115,6 +119,7 @@
 				380B2FC61F7214C200046631 /* String+L10n.swift */,
 				380B2FC31F71E64D00046631 /* ColorsList.txt */,
 				380B2FCA1F72166900046631 /* MyColors.swift */,
+				3898B5291F7C5BB500273064 /* MyStoryboards.swift */,
 			);
 			path = "SwiftGen resources";
 			sourceTree = "<group>";
@@ -180,6 +185,7 @@
 				383CAADF1F72E4D800927FAE /* PhotoCache.swift */,
 				383CAAD01F72BD8500927FAE /* Errors.swift */,
 				383CAAD21F72C28E00927FAE /* Optional+Extensions.swift */,
+				3898B52B1F7C8DA500273064 /* Array+Extensions.swift */,
 			);
 			path = Supporting;
 			sourceTree = "<group>";
@@ -339,7 +345,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "swiftgen strings -t flat-swift4  \"$SRCROOT/MyPhotoViewer/SwiftGen resources/localizable.strings\" -o \"$SRCROOT/MyPhotoViewer/SwiftGen resources/String+L10n.swift\"\n\nswiftgen colors -t swift4 \"$SRCROOT/MyPhotoViewer/SwiftGen resources/ColorsList.txt\" -o \"$SRCROOT/MyPhotoViewer/Swiftgen resources/MyColors.swift\"\n\nswiftgen xcassets -t swift4  \"$SRCROOT/MyPhotoViewer/Assets.xcassets\" -o \"$SRCROOT/MyPhotoViewer/SwiftGen resources/Assets.swift\"\n";
+			shellScript = "swiftgen strings -t flat-swift4  \"$SRCROOT/MyPhotoViewer/SwiftGen resources/localizable.strings\" -o \"$SRCROOT/MyPhotoViewer/SwiftGen resources/String+L10n.swift\"\n\nswiftgen colors -t swift4 \"$SRCROOT/MyPhotoViewer/SwiftGen resources/ColorsList.txt\" -o \"$SRCROOT/MyPhotoViewer/Swiftgen resources/MyColors.swift\"\n\nswiftgen xcassets -t swift4  \"$SRCROOT/MyPhotoViewer/Assets.xcassets\" -o \"$SRCROOT/MyPhotoViewer/SwiftGen resources/Assets.swift\"\n\nswiftgen storyboards -t swift4 \"$SRCROOT/MyPhotoViewer/\" -o \"$SRCROOT/MyPhotoViewer/Swiftgen resources/MyStoryboards.swift\"";
 		};
 		3B4D96CC5695D5B7A0B46E8A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -450,6 +456,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				383CAADA1F72CC8300927FAE /* PhotoImageFetcher.swift in Sources */,
+				3898B52C1F7C8DA500273064 /* Array+Extensions.swift in Sources */,
 				380B2FD31F722C9800046631 /* Photo.swift in Sources */,
 				383CAAD81F72CA4E00927FAE /* PhotoCell.swift in Sources */,
 				380B2FCB1F72166900046631 /* MyColors.swift in Sources */,
@@ -457,6 +464,7 @@
 				380B2FCD1F72194600046631 /* PhotoViewerNavController.swift in Sources */,
 				380B2FD11F7221FF00046631 /* String+L10n.swift in Sources */,
 				38D363F51F77011800E91B6E /* PhotoDetailViewController.swift in Sources */,
+				3898B52A1F7C5BB500273064 /* MyStoryboards.swift in Sources */,
 				383A8F901F70EBB700216B24 /* AppDelegate.swift in Sources */,
 				38D364201F78B1F500E91B6E /* Assets.swift in Sources */,
 				383CAAD31F72C28E00927FAE /* Optional+Extensions.swift in Sources */,
