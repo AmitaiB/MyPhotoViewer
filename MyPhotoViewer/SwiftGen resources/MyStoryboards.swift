@@ -57,19 +57,9 @@ enum StoryboardScene {
 
     static let initialScene = InitialSceneType<UIViewController>(storyboard: LaunchScreen.self)
   }
-  enum Main: StoryboardType {
-    static let storyboardName = "Main"
-
-    static let initialScene = InitialSceneType<MyPhotoViewer.PhotoViewerNavController>(storyboard: Main.self)
-
-    static let photoDetailViewController = SceneType<MyPhotoViewer.PhotoDetailViewController>(storyboard: Main.self, identifier: "PhotoDetailViewController")
-  }
 }
 
 enum StoryboardSegue {
-  enum Main: String, SegueType {
-    case photoDetailSegueID = "PhotoDetailSegueID"
-  }
 }
 // swiftlint:enable explicit_type_interface identifier_name line_length type_body_length type_name
 

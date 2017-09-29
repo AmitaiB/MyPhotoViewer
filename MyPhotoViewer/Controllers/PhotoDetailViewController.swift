@@ -12,34 +12,38 @@ class PhotoDetailViewController: UIViewController {
 	var photo: PhotoData?
 	var imageView = UIImageView(image: Asset.placeholderIcon.image)
 	var captionView = UITextView()
+	var animator: UIDynamicAnimator?
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
 
-		view.backgroundColor = UIColor(named: .clouds)
-		view.addSubview(imageView)
+		view.backgroundColor = UIColor(named: .clouds).withAlphaComponent(0.9)
 		setupImageView()
-		
-		view.addSubview(captionView)
-		setupCaptionView()
-		
+		setImage()
 		setupTapToDismiss()
-	}
-
-	var offscreenRect: CGRect {
-		let fullscreenWidth = UIScreen.main.bounds.size.width
-		let squareSize = CGSize(width: fullscreenWidth,
-		                        height: fullscreenWidth)
-		let offscreenY = UIScreen.main.bounds.minY * 1.5
-		let offscreenPoint = CGPoint(x: 0, y: offscreenY)
-		let offscreenRect = CGRect(origin: offscreenPoint, size: squareSize)
+		setupCaptionView()
+	
+		animator = UIDynamicAnimator(referenceView: view)
+		animator?.delegate = self
 		
-		return offscreenRect
 	}
 	
-	fileprivate func setupImageView() {
-		imageView.frame = offscreenRect
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
 		
+		let snapToCenter = UISnapBehavior(item: imageView, snapTo: view.center)
+		animator?.addBehavior(snapToCenter)
+	}
+
+	
+	// MARK: UIImageView (photo)
+	
+	fileprivate func setupImageView() {
+		imageView.frame = offScreenRect
+		view.addSubview(imageView)
+	}
+	
+	fileprivate func setImage() {
 		if let photo = photo {
 			do {
 				try PhotoImageFetcher.image(forPhoto: photo,
@@ -51,18 +55,22 @@ class PhotoDetailViewController: UIViewController {
 		}
 	}
 
-	fileprivate func setupCaptionView() {
-		setupCaptionTextView()
-		setupCaptionViewConstraints()
+	fileprivate var offScreenRect: CGRect {
+		let fullscreenWidth = UIScreen.main.bounds.size.width
+		let offscreenY = abs(UIScreen.main.bounds.maxY) * -2
+		return CGRect(x: 0, y: offscreenY, width: fullscreenWidth, height: fullscreenWidth)
 	}
 	
-	fileprivate func setupCaptionTextView() {
+	
+	// MARK: UITextView (title/caption)
+	fileprivate func setupCaptionView() {
+		view.addSubview(captionView)
 		captionView.textContainer.lineBreakMode = .byWordWrapping
 		captionView.textAlignment = .justified
+		captionView.text = photo?.title
 		
-		if let photo = photo {
-			captionView.text = photo.title
-		}
+		setupCaptionViewConstraints()
+		captionView.alpha = 0
 	}
 	
 	fileprivate func setupCaptionViewConstraints() {
@@ -74,22 +82,22 @@ class PhotoDetailViewController: UIViewController {
 		                             imageCaptionBoundaryConstraint])
 	}
 	
-	var captionViewLeadingConstraint: NSLayoutConstraint {
+	fileprivate var captionViewLeadingConstraint: NSLayoutConstraint {
 		return NSLayoutConstraint(item: captionView, attribute: .leading, relatedBy: .equal,
 		                          toItem: imageView, attribute: .leading, multiplier: 1.0, constant: 0.0)
 	}
 	
-	var captionViewTrailingConstraint: NSLayoutConstraint {
+	fileprivate var captionViewTrailingConstraint: NSLayoutConstraint {
 		return NSLayoutConstraint(item: captionView, attribute: .trailing, relatedBy: .equal,
 		                          toItem: imageView, attribute: .trailing, multiplier: 1.0, constant: 0.0)
 	}
 	
-	var captionViewHeightConstraint: NSLayoutConstraint {
+	fileprivate var captionViewHeightConstraint: NSLayoutConstraint {
 		return NSLayoutConstraint(item: captionView, attribute: .height, relatedBy: .equal,
 		                          toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 26)
 	}
 	
-	var imageCaptionBoundaryConstraint: NSLayoutConstraint {
+	fileprivate var imageCaptionBoundaryConstraint: NSLayoutConstraint {
 		return NSLayoutConstraint(item: captionView, attribute: .top, relatedBy: .equal,
 		                          toItem: imageView, attribute: .bottom, multiplier: 1.0, constant: 8.0)
 	}
@@ -102,6 +110,19 @@ class PhotoDetailViewController: UIViewController {
 	
 	@objc fileprivate func dismissDetailView() {
 		presentingViewController?.dismiss(animated: true, completion: nil)
+	}
+}
+
+
+// MARK: - UIDynamicAnimatorDelegate
+
+extension PhotoDetailViewController: UIDynamicAnimatorDelegate {
+	func dynamicAnimatorDidPause(_ animator: UIDynamicAnimator) {
+		UIView.animate(withDuration: 0.1, animations: { self.captionView.alpha = 1 })
+	}
+	
+	func dynamicAnimatorWillResume(_ animator: UIDynamicAnimator) {
+		UIView.animate(withDuration: 0.1, animations: { self.captionView.alpha = 0 })
 	}
 }
 

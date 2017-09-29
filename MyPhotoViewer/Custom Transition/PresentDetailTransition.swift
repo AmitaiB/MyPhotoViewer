@@ -15,7 +15,9 @@ class PresentDetailTransition: NSObject, UIViewControllerAnimatedTransitioning {
 	
 	func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
 		guard let detail = transitionContext.viewController(forKey: .to) else {
-			fatalError("Could not get a reference to the detail view controller.") }
+			fatalError("Could not get a reference to the detail view controller.")
+		}
+		
 		let containerView = transitionContext.containerView
 		
 		detail.view.alpha = 0.0
@@ -26,13 +28,8 @@ class PresentDetailTransition: NSObject, UIViewControllerAnimatedTransitioning {
 		detail.view.frame = frame
 		containerView.addSubview(detail.view)
 		
-		let detailViewAppear = { detail.view.alpha = 1.0 }
-		let notifyContext_TransitionComplete = { (finished: Bool) in transitionContext.completeTransition(true) }
-		
 		UIView.animate(withDuration: 0.15,
-		               animations: detailViewAppear,
-		               completion: notifyContext_TransitionComplete)
+		               animations: { detail.view.alpha = 1.0 },
+		               completion: { (finished: Bool) in transitionContext.completeTransition(finished) })
 	}
-	
-	
 }
