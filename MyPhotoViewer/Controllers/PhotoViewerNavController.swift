@@ -12,7 +12,7 @@ class PhotoViewerNavController: UINavigationController {
 	override init(rootViewController: UIViewController) {
 		super.init(rootViewController: rootViewController)
 		
-		navigationBar.tintColor = UIColor(named: .justPeachy)
+		navigationBar.barTintColor = Color(named: .justPeachy)
 		navigationBar.barStyle = .blackOpaque
 	}
 	

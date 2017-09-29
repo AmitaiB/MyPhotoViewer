@@ -13,11 +13,12 @@ class PhotoDetailViewController: UIViewController {
 	var imageView = UIImageView(image: Asset.placeholderIcon.image)
 	var captionView = UITextView()
 	var animator: UIDynamicAnimator?
+	var imageInset: CGFloat = 5.0
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
 
-		view.backgroundColor = UIColor(named: .clouds).withAlphaComponent(0.9)
+		view.backgroundColor = UIColor(named: .clouds).withAlphaComponent(0.4)
 		setupImageView()
 		setImage()
 		setupTapToDismiss()
@@ -25,13 +26,12 @@ class PhotoDetailViewController: UIViewController {
 	
 		animator = UIDynamicAnimator(referenceView: view)
 		animator?.delegate = self
-		
 	}
 	
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
 		
-		let snapToCenter = UISnapBehavior(item: imageView, snapTo: view.center)
+		let snapToCenter = UISnapBehavior(item: imageView, snapTo: view.center.offsetBy(dy: -50))
 		animator?.addBehavior(snapToCenter)
 	}
 
@@ -39,7 +39,9 @@ class PhotoDetailViewController: UIViewController {
 	// MARK: UIImageView (photo)
 	
 	fileprivate func setupImageView() {
-		imageView.frame = offScreenRect
+		imageView.frame = offScreenRect.insetBy(dx: imageInset, dy: imageInset)
+		imageView.layer.cornerRadius = 3
+		imageView.layer.masksToBounds = true
 		view.addSubview(imageView)
 	}
 	
@@ -66,8 +68,12 @@ class PhotoDetailViewController: UIViewController {
 	fileprivate func setupCaptionView() {
 		view.addSubview(captionView)
 		captionView.textContainer.lineBreakMode = .byWordWrapping
-		captionView.textAlignment = .justified
+		captionView.textAlignment = .center
 		captionView.text = photo?.title
+		captionView.backgroundColor = Color(named: .pumpkin).withAlphaComponent(0.5)
+
+		captionView.layer.cornerRadius = 5
+		captionView.layer.masksToBounds = true
 		
 		setupCaptionViewConstraints()
 		captionView.alpha = 0
@@ -84,12 +90,12 @@ class PhotoDetailViewController: UIViewController {
 	
 	fileprivate var captionViewLeadingConstraint: NSLayoutConstraint {
 		return NSLayoutConstraint(item: captionView, attribute: .leading, relatedBy: .equal,
-		                          toItem: imageView, attribute: .leading, multiplier: 1.0, constant: 0.0)
+		                          toItem: imageView, attribute: .leading, multiplier: 1.0, constant: 20.0)
 	}
 	
 	fileprivate var captionViewTrailingConstraint: NSLayoutConstraint {
 		return NSLayoutConstraint(item: captionView, attribute: .trailing, relatedBy: .equal,
-		                          toItem: imageView, attribute: .trailing, multiplier: 1.0, constant: 0.0)
+		                          toItem: imageView, attribute: .trailing, multiplier: 1.0, constant: -20.0)
 	}
 	
 	fileprivate var captionViewHeightConstraint: NSLayoutConstraint {
@@ -109,6 +115,11 @@ class PhotoDetailViewController: UIViewController {
 	}
 	
 	@objc fileprivate func dismissDetailView() {
+		animator?.removeAllBehaviors()
+		
+		let snapDownOffscreen = UISnapBehavior(item: imageView, snapTo: view.center.offsetBy(dy: 500))
+		animator?.addBehavior(snapDownOffscreen)
+		
 		presentingViewController?.dismiss(animated: true, completion: nil)
 	}
 }
@@ -118,11 +129,17 @@ class PhotoDetailViewController: UIViewController {
 
 extension PhotoDetailViewController: UIDynamicAnimatorDelegate {
 	func dynamicAnimatorDidPause(_ animator: UIDynamicAnimator) {
-		UIView.animate(withDuration: 0.1, animations: { self.captionView.alpha = 1 })
+		UIView.animate(withDuration: 0.01, animations: { self.captionView.alpha = 1 })
 	}
 	
 	func dynamicAnimatorWillResume(_ animator: UIDynamicAnimator) {
-		UIView.animate(withDuration: 0.1, animations: { self.captionView.alpha = 0 })
+		UIView.animate(withDuration: 0.01, animations: { self.captionView.alpha = 0 })
 	}
 }
 
+
+fileprivate extension CGPoint {
+	func offsetBy(dx: CGFloat = 0, dy: CGFloat = 0) -> CGPoint {
+		return CGPoint(x: x + dx, y: y + dy)
+	}
+}
