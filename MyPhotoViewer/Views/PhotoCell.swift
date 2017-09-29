@@ -9,15 +9,33 @@
 import UIKit
 
 class PhotoCell: UICollectionViewCell {
-	@IBOutlet weak var imageView: UIImageView!
+	var imageView: UIImageView
 	var photo: PhotoData? {
 		didSet {
 			setPhoto(photo)
 		}
 	}
 	
-	func setPhoto(_ photo: PhotoData?) {
-		guard let photo = photo else { return }
+	override init(frame: CGRect) {
+		imageView = UIImageView()
+		
+		super.init(frame: frame)
+		
+		contentView.addSubview(imageView)
+	}
+	
+	override func layoutSubviews() {
+		super.layoutSubviews()
+		
+		imageView.frame = contentView.bounds
+	}
+	
+	required init?(coder aDecoder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
+	}
+	
+	func setPhoto(_ photoData: PhotoData?) {
+		guard let photo = photoData else { return }
 		
 		do {
 			try PhotoImageFetcher.image(forPhoto: photo, size: .thumbnail) { self.imageView.image = $0 }

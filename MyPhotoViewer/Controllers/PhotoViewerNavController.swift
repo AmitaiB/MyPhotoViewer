@@ -9,9 +9,18 @@
 import UIKit
 
 class PhotoViewerNavController: UINavigationController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-		navigationBar.tintColor = Color(named: .justPeachy)
-    }
+	override init(rootViewController: UIViewController) {
+		super.init(rootViewController: rootViewController)
+		
+		navigationBar.tintColor = UIColor(named: .justPeachy)
+		navigationBar.barStyle = .blackOpaque
+	}
+	
+	override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+		super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+	}
+	
+	required init?(coder aDecoder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
+	}
 }

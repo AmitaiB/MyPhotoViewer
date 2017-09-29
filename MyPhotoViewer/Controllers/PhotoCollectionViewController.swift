@@ -13,15 +13,23 @@ private let reuseIdentifier = L10n.photoCellReuseID
 class PhotoCollectionViewController: UICollectionViewController {
 	var photos = [PhotoData]()
 	var images = [UIImage]()
-	var detailViewController: PhotoDetailViewController? {
-		return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PhotoDetailViewController") as? PhotoDetailViewController
+	
+	init() {
+		super.init(collectionViewLayout: PhotoCollectionViewController.flowLayout)
 	}
 	
+	required init?(coder aDecoder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
+	}
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+		
+		// Register cell classes
+		collectionView?.register(PhotoCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+		
+		collectionView?.backgroundColor = .white
+		title = "YAPhotoViewer"
 		
 		do { try refresh() }
 		catch { print(error.localizedDescription) }
@@ -74,8 +82,9 @@ class PhotoCollectionViewController: UICollectionViewController {
 		return photoCell
     }
 
-    // MARK: UICollectionViewDelegate
-
+	
+	 // MARK: UICollectionViewDelegate
+	
     override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
         return true
     }
@@ -86,12 +95,38 @@ class PhotoCollectionViewController: UICollectionViewController {
 	}
 	
 	fileprivate func presentDetailView(for photo: PhotoData) {
-		if let detailVC = detailViewController {
+		let detailVC = PhotoDetailViewController()
+
+			detailVC.modalPresentationStyle = .custom
+			detailVC.transitioningDelegate = self
 			detailVC.photo = photo
 			
 			present(detailVC, animated: true, completion: nil)
-		}
 	}
 }
 
 
+// MARK: - UIViewControllerTransitioningDelegate
+
+
+extension PhotoCollectionViewController: UIViewControllerTransitioningDelegate {
+	func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+		return PresentDetailTransition()
+	}
+	
+	func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+		return DismissDetailTransition()
+	}
+}
+
+
+extension PhotoCollectionViewController {
+	static var flowLayout: UICollectionViewFlowLayout {
+		let layout = UICollectionViewFlowLayout()
+		layout.itemSize = CGSize(width: 106.0, height: 106.0)
+		layout.minimumInteritemSpacing = 1.0
+		layout.minimumLineSpacing = 1.0
+		
+		return layout
+	}
+}

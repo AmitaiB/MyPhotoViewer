@@ -49,3 +49,16 @@ public extension Optional {
 	}
 }
 
+//
+// Additions by Amitai Blickstein
+//
+
+infix operator ?=
+
+/// Syntactic sugar for `optional = optional ?? `default``
+public func ?=<T>(optional: inout T?, default: T) {
+	optional = optional ?? `default`
+}
+
+
+
