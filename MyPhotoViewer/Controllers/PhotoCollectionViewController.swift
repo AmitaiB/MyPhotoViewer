@@ -31,11 +31,24 @@ class PhotoCollectionViewController: UICollectionViewController {
 		collectionView?.backgroundColor = .white
 		title = "YAPhotoViewer"
 		
-		do { try refresh() }
+		setupPullToRefresh()
+		
+		do { try fetchPhotos() }
 		catch { print(error.localizedDescription) }
     }
 	
-	@objc func refresh() throws {
+	func setupPullToRefresh() {
+		let refresher = UIRefreshControl()
+		let title = NSLocalizedString("PullToRefresh", comment: "Pull to refresh")
+		refresher.attributedTitle = NSAttributedString(string: title)
+		refresher.addTarget(self,
+		                    action: #selector(fetchPhotos),
+		                    for: .valueChanged)
+		collectionView?.refreshControl = refresher
+	}
+	
+	
+	@objc func fetchPhotos() throws {
 		let task = createPhotoDataTask()
 		task.resume()
 	}
@@ -49,6 +62,7 @@ class PhotoCollectionViewController: UICollectionViewController {
 				let photosData = try JSONDecoder().decode([PhotoData].self, from: data)
 				self.photos = photosData
 				DispatchQueue.main.async {
+					self.collectionView?.refreshControl?.endRefreshing()
 					self.collectionView?.reloadData()
 				}
 			}
