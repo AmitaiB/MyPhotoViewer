@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct PhotoData: Decodable {
+struct PhotoData: Decodable, Equatable {
 	let albumId: Int
 	let id: Int
 	let title: String
@@ -21,6 +21,16 @@ struct PhotoData: Decodable {
 	
 	var thumbnailCacheKey: String {
 		return "\(cacheKey) - thumbnail"
+	}
+
+	static func ==(lhs: PhotoData, rhs: PhotoData) -> Bool {
+		return lhs.albumId == rhs.albumId
+			&& lhs.id == rhs.id
+			&& lhs.title == rhs.title
+			&& lhs.url == rhs.url
+			&& lhs.thumbnailUrl == rhs.thumbnailUrl
+			&& lhs.cacheKey == rhs.cacheKey
+			&& lhs.thumbnailCacheKey == rhs.thumbnailCacheKey
 	}
 }
 

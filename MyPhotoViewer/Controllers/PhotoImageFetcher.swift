@@ -31,7 +31,7 @@ class PhotoImageFetcher {
 	// MARK: Helper functions
 	
 	/// Attempts to retreive the image from the cache, returning `nil` if not found.
-	private static func retrieveImage(forPhoto photoData: PhotoData, ofSize size: PhotoSize, from cache: Storage?) throws -> Image? {
+	static func retrieveImage(forPhoto photoData: PhotoData, ofSize size: PhotoSize, from cache: Storage? = cache) throws -> Image? {
 		guard let theCache = cache else { throw LocalError.cacheFailed }
 		
 		let imageKey = size == .full ? photoData.cacheKey : photoData.thumbnailCacheKey
@@ -56,8 +56,7 @@ class PhotoImageFetcher {
 				let imageCacheKey = imageKey(of: photoData, in: size)
 				let imageData = try Data(contentsOf: location)
 				if let image = UIImage(data: imageData) {
-					let wrapper = ImageWrapper(image: image)
-					try cache?.setObject(wrapper, forKey: imageCacheKey)
+					self.locallyCache(image, withKey: imageCacheKey)
 					
 					DispatchQueue.main.async {
 						completion(image)
@@ -83,6 +82,17 @@ class PhotoImageFetcher {
 	
 	private static func imageURL(of photoData: PhotoData, in size: PhotoSize) -> URL {
 		return size == .full ? photoData.url : photoData.thumbnailUrl
+	}
+
+	private static func locallyCache(_ image: UIImage, withKey key: String) {
+		let wrapper = ImageWrapper(image: image)
+		do
+		{
+			try cache?.setObject(wrapper, forKey: key)
+		}
+		catch {
+			print(error.localizedDescription)
+		}
 	}
 }
 
