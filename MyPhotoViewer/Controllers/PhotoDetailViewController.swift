@@ -12,8 +12,17 @@ class PhotoDetailViewController: UIViewController {
 	var photo: PhotoData?
 	var imageView = UIImageView(image: Asset.placeholderIcon.image)
 	var captionView = UITextView()
-	var animator: UIDynamicAnimator?
-	var imageInset: CGFloat = 5.0
+	
+	private var imageInset: CGFloat = 5.0
+	
+	private var animator: UIDynamicAnimator?
+	
+	private var originalBounds = CGRect.zero
+	private var originalCenter = CGPoint.zero
+	
+	private var attachmentBehavior: UIAttachmentBehavior!
+	private var pushBehavior: UIPushBehavior!
+	private var itemBehavior: UIDynamicItemBehavior!
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,10 +31,46 @@ class PhotoDetailViewController: UIViewController {
 		setupImageView()
 		setImage()
 		setupTapToDismiss()
+		setupSwipeToTossView()
 		setupCaptionView()
 	
 		animator = UIDynamicAnimator(referenceView: view)
 		animator?.delegate = self
+	}
+	
+	func setupSwipeToTossView() {
+		let panRecognizer = UIPanGestureRecognizer(target: self, action: #selector(handleAttachmentGesture(sender:)))
+		view.addGestureRecognizer(panRecognizer)
+		
+		originalBounds = imageView.bounds
+		originalCenter = imageView.center
+	}
+	
+	
+	@objc func handleAttachmentGesture(sender: UIPanGestureRecognizer) {
+		let location = sender.location(in: view)
+		let boxLocation = sender.location(in: imageView)
+		
+		switch sender.state {
+		case .began:
+			print("Your touch start position is \(location)")
+			print("Start location in image is \(boxLocation)")
+			
+			animator?.removeAllBehaviors()
+			
+			let centerOffset = UIOffset(horizontal: boxLocation.x - imageView.bounds.midX,
+			                            vertical: boxLocation.y - imageView.bounds.midY)
+			attachmentBehavior = UIAttachmentBehavior(item: imageView,
+			                                          offsetFromCenter: centerOffset,
+			                                          attachedToAnchor: location)
+			
+			animator?.addBehavior(attachmentBehavior)
+		case .ended:
+			print("Your touch end position is \(location)")
+			print("End location in image is \(boxLocation)")
+		default:
+			attachmentBehavior.anchorPoint = sender.location(in: view)
+		}
 	}
 	
 	override func viewDidAppear(_ animated: Bool) {
