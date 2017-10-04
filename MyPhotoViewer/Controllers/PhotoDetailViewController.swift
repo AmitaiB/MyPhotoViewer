@@ -8,6 +8,9 @@
 
 import UIKit
 
+let kTossingThreshold: CGFloat = 1000
+let kTossingVelicotyPadding: CGFloat = 35
+
 class PhotoDetailViewController: UIViewController {
 	var photo: PhotoData?
 	var imageView = UIImageView(image: Asset.placeholderIcon.image)
@@ -23,6 +26,8 @@ class PhotoDetailViewController: UIViewController {
 	private var attachmentBehavior: UIAttachmentBehavior!
 	private var pushBehavior: UIPushBehavior!
 	private var itemBehavior: UIDynamicItemBehavior!
+	
+	
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +48,7 @@ class PhotoDetailViewController: UIViewController {
 		view.addGestureRecognizer(panRecognizer)
 		
 		originalBounds = imageView.bounds
-		originalCenter = imageView.center
+		originalCenter = view.center
 	}
 	
 	
@@ -53,23 +58,68 @@ class PhotoDetailViewController: UIViewController {
 		
 		switch sender.state {
 		case .began:
-			print("Your touch start position is \(location)")
+			print("\nYour touch start position is \(location)")
 			print("Start location in image is \(boxLocation)")
-			
-			animator?.removeAllBehaviors()
 			
 			let centerOffset = UIOffset(horizontal: boxLocation.x - imageView.bounds.midX,
 			                            vertical: boxLocation.y - imageView.bounds.midY)
 			attachmentBehavior = UIAttachmentBehavior(item: imageView,
 			                                          offsetFromCenter: centerOffset,
 			                                          attachedToAnchor: location)
-			
+			animator?.removeAllBehaviors()
 			animator?.addBehavior(attachmentBehavior)
+			
 		case .ended:
-			print("Your touch end position is \(location)")
+			print("\nYour touch end position is \(location)")
 			print("End location in image is \(boxLocation)")
+			
+			handleEnd(of: sender)
+			
 		default:
 			attachmentBehavior.anchorPoint = sender.location(in: view)
+		}
+	}
+	
+	
+	private func handleEnd(of sender: UIPanGestureRecognizer) {
+		let velocity = sender.velocity(in: view)
+		let dx = velocity.x, dy = velocity.y
+		let magnitude = sqrt((dx * dx) + (dy * dy))
+		
+		if magnitude > kTossingThreshold {
+			// push behavior
+			let aPushBehavior = UIPushBehavior(items: [imageView], mode: .instantaneous)
+			aPushBehavior.pushDirection = CGVector(dx: dx / 10, dy: dy / 10)
+			aPushBehavior.magnitude = magnitude / kTossingVelicotyPadding
+			
+			pushBehavior = aPushBehavior
+			animator?.addBehavior(pushBehavior)
+			
+			// item behvior
+			let angle = Int(arc4random_uniform(20)) - 10
+			itemBehavior = UIDynamicItemBehavior(items: [imageView])
+			itemBehavior.friction = 0.2
+			itemBehavior.allowsRotation = true
+			itemBehavior.addAngularVelocity(CGFloat(angle), for: imageView)
+			
+			animator?.addBehavior(itemBehavior)
+			
+			DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+				self.resetDraggedView()
+			}
+		}
+		else {
+			resetDraggedView()
+		}
+	}
+	
+	func resetDraggedView() {
+		animator?.removeAllBehaviors()
+		
+		UIView.animate(withDuration: 0.3) {
+			self.imageView.bounds = self.originalBounds
+			self.imageView.center = self.originalCenter
+			self.imageView.transform = CGAffineTransform.identity
 		}
 	}
 	
